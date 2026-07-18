@@ -17,4 +17,9 @@ function getComputerChoice()
         return "scissor";
     }
 }
+//create a function so the user can input his choice among rock, paper, scissor
+function getHumanChoice()
+{
+    return prompt("choose between rock, paper, scissor:");
+}
 
