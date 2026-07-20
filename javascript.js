@@ -1,3 +1,16 @@
+const playButton = document.querySelector(".playButton");
+playButton.addEventListener("click", playGame);
+
+//create an Integer variable for humanScore
+let humanScore = 0;
+
+//create an Integer Variable for computerScore
+let computerScore = 0;
+
+// getting  node reference of a div to display results, and 2 p elements to diplay score
+const resultDiv = document.querySelector(".results");
+const computerScorePara = document.querySelector(".computer-score");
+const playerScorePara = document.querySelector(".player-score");
 // Create a function that return either rock, paper, or scissors
 function getComputerChoice()
 {
@@ -19,21 +32,13 @@ function getComputerChoice()
     }
 }
 
-const playButton = document.querySelector(".playButton");
 
-playButton.addEventListener("click", playGame);
 
 
 // Write a function that manage the whole game by using previous functions
 function playGame()
 {   
-    //create an Integer variable for humanScore
-    let humanScore = 0;
-
-    //create an Integer Variable for computerScore
-    let computerScore = 0;
-
-    const resultDiv = document.querySelector(".results");
+    
 
     // write a function for the game logic, that decide who is the round winner and increment the score
     function playRound(humanChoice, computerChoice)
@@ -49,6 +54,7 @@ function playGame()
                 }else if(computerChoice === "paper")
                 {
                     computerScore+=1;
+                    
                     resultDiv.textContent = "Paper beats Rock, computer wins!";
     
                 }else
@@ -86,6 +92,9 @@ function playGame()
                     resultDiv.textContent = "Scissor vs Scissor, It's a Draw!";
                 }
             }
+            // updating player and computer score
+            computerScorePara.textContent = "computer score = " + computerScore;
+            playerScorePara.textContent = "player score = " + humanScore;
         }else
         {
             if(humanScore === 5)
@@ -108,12 +117,12 @@ function playGame()
     const rockButton = document.createElement("button");
     const scissorButton = document.createElement("button");
     const paperButton = document.createElement("button");
+    const buttonsContainer = document.querySelector(".buttons-container");
 
     rockButton.textContent = "rock";
     scissorButton.textContent = "scissors";
     paperButton.textContent = "paper";
 
-    const buttonsContainer = document.querySelector(".buttons-container");
     buttonsContainer.appendChild(rockButton);
     buttonsContainer.appendChild(scissorButton);
     buttonsContainer.appendChild(paperButton);
@@ -128,19 +137,11 @@ function playGame()
     paperButton.addEventListener("click", ()=>{
       playRound("paper", getComputerChoice());  
     });
-    if(humanScore > computerScore)
-    {
-        console.log("Human is the winner by a score of "+ humanScore +".");
-        console.log("Computer Score: "+computerScore+ " /human Score: "+humanScore);
-    }else if(computerScore >humanScore)
-    {
-        console.log("computer is the winner by a score of "+ computerScore +".");
-        console.log("Computer Score: "+computerScore+ " /human Score: "+humanScore);
-    }else
-    {
-        console.log("It's a draw");
-        console.log("Computer Score: "+computerScore+ " /human Score: "+humanScore);
-    }
+
+    // initializing computer score and player score to 0
+    computerScorePara.textContent = "computer score = 0";
+    playerScorePara.textContent = "player score = 0";
+    
 }
 
 
