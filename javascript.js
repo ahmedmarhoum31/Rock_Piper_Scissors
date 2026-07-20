@@ -43,7 +43,7 @@ function playGame()
         //make humanChoice parameter; canse insensetive by turning or letters to lower case like computerChoice
         humanChoice = humanChoice.toLowerCase();
 
-        const resultDiv = document.querySelector("div");
+        const resultDiv = document.querySelector(".results");
 
         //Decide who is the winner.
         if(humanChoice === "rock")

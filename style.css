@@ -1,0 +1,75 @@
+*
+{
+    font-family:'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1
+{
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.playButton
+{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 20px 40px;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.buttons-container
+{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.buttons-container button
+{
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 24px;
+}
+
+.score-container
+{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    
+}
+
+.score-container p
+{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.results
+{
+    font-size: 18px;
+    font-weight: 700px;
+}
