@@ -30,6 +30,7 @@ function getHumanChoice()
 // Write a function that manage the whole game by using previous functions
 function playGame()
 {
+    const resultDiv = document.querySelector("div");
     //create an Integer variable for humanScore
     let humanScore = 0;
 
@@ -42,48 +43,52 @@ function playGame()
         //make humanChoice parameter; canse insensetive by turning or letters to lower case like computerChoice
         humanChoice = humanChoice.toLowerCase();
 
+        const resultDiv = document.querySelector("div");
+
         //Decide who is the winner.
         if(humanChoice === "rock")
         {
             if(computerChoice === "rock")
             {
-                console.log("Rock versus Rock is draw");
+                resultDiv.textContent = "Rock versus Rock is draw";
             }else if(computerChoice === "paper")
             {
                 computerScore+=1;
-                console.log("Paper beats Rock, computer wins!");
+                resultDiv.textContent = "Paper beats Rock, computer wins!";
+  
             }else
             {
                 humanScore+=1;
-                console.log("Rock beats Scissor, human wins!");
+                resultDiv.textContent ="Rock beats Scissor, human wins!";
             }
         }else if(humanChoice === "paper")
         {
             if(computerChoice === "rock")
             {
                 humanScore+=1;
-                console.log("Paper beats Rock, human wins!");
+           
+                resultDiv.textContent ="Paper beats Rock, human wins!";
             }else if(computerChoice === "paper")
             {
-                console.log("Paper versus Paper, it's a Draw!");
+                resultDiv.textContent="Paper versus Paper, it's a Draw!";
             }else
             {
                 computerScore+=1;
-                console.log("Scissor beats Paper, computer wins!");
+                resultDiv.textContent = "Scissor beats Paper, computer wins!"
             }
         }else
         {
             if(computerChoice === "rock")
             {
                 computerScore+=1;
-                console.log("Rock beats Scissor, Computer wins!");
+                resultDiv.textContent = "Rock beats Scissor, Computer wins!";
             }else if(computerChoice === "paper")
             {
                 humanScore += 1;
-                console.log("Scissor beats Paper, human wins!");
+                resultDiv.textContent = "Scissor beats Paper, human wins!";
             }else
             {
-                console.log("Scissor vs Scissor, It's a Draw!");
+                resultDiv.textContent = "Scissor vs Scissor, It's a Draw!";
             }
         }
     }
