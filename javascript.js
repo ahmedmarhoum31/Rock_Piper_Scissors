@@ -109,6 +109,7 @@ function playGame()
             playerScorePara.textContent = "player score = " + humanScore;
         }else
         {
+            //after the player or computer reach score 5, initializig all nodes to their default display value at start
             nextRoundButton.style.display="none";
             chooseTitle.style.display="block";
             choicesCards.style.display = "flex";
@@ -138,6 +139,7 @@ function playGame()
     const scissor = document.querySelector(".scissors");
     const choicesCards = document.querySelector(".choices-cards");
     const choices = document.querySelector(".choices");
+    
     const nextRoundButton = document.querySelector(".next-button")
     const chooseTitle = document.querySelector(".choose-title");
 
