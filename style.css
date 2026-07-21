@@ -219,55 +219,55 @@ footer p
     color: #F59E0B;
     margin: 0;
 }
-/*
+
 @media (max-width: 900px) {
     .gameplay-content h1
     {
-        font-size: 18px;
+        font-size: 1rem;
     }
     .choices-cards
     {
-        gap: 10px;
+        gap: 0.5rem;
     }
 
     .choices-cards .card img
 {
-    width: 80px;
-    border-radius: 25px 25px 0 0 ;
+    width: 5rem;
+    border-radius: 1rem 1rem 0 0 ;
     margin: 0;
     padding: 0;
 }
     .choices-cards .card  p
     {
-        font-size: 18px;
-        width: 80px;
+        font-size: 1rem;
+        width: 5rem;
     }
 
 
     header h1
     {
-        font-size: 24px;
-        padding:10px;
+        font-size: 1.2rem;
+        padding:0.6rem;
     
     }
 
     .gameplay-content h1
     {
-    font-size: 16px;
+    font-size: 0.8rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.4rem;
     }
 
     main .play-button, .next-button
 {
  
-    font-size: 30px;
+    font-size: 1.5rem;
     height: auto;
     width: auto;
-    letter-spacing: 20px;
-    padding: 10px 20px;
+    letter-spacing: 1.4rem;
+    padding: 0.8rem 1.2rem;
     background-color:  #60A5FA;
-    border-radius: 15px;
+    border-radius: 1rem;
     color: #F59E0B;
 
 }
@@ -276,43 +276,42 @@ footer p
     display: none;
     width: auto;
     height: auto;
-    font-size: 18px;
+    font-size: 1rem;
     letter-spacing: 1px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
 }
 
 footer p 
 {
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .score p
 {
-    font-size: 18px;
+    font-size: 1rem;
 }
 .results
 {
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .choices .player-choice img, .choices .computer-choice img
 {
-    width: 80px;
+    width: 5rem;
 }
 
 .choices .player-choice p, .choices .computer-choice p
 {
-    width: 80px;
-    font-size: 18px;
+    width: 5rem;
+    font-size: 1rem;
 }
 .next-button
 {
-    font-size: 20px;
+    font-size: 1.2rem;
     width: auto;
     height: auto;
     letter-spacing: 0;
 
 }
 }
-*/
