@@ -1,4 +1,4 @@
-const playButton = document.querySelector(".playButton");
+const playButton = document.querySelector(".play-button");
 playButton.addEventListener("click", playGame);
 
 //create an Integer variable for humanScore
@@ -11,6 +11,7 @@ let computerScore = 0;
 const resultDiv = document.querySelector(".results");
 const computerScorePara = document.querySelector(".computer-score");
 const playerScorePara = document.querySelector(".player-score");
+const gamePlayContent = document.querySelector(".gameplay-content");
 // Create a function that return either rock, paper, or scissors
 function getComputerChoice()
 {
@@ -38,8 +39,8 @@ function getComputerChoice()
 // Write a function that manage the whole game by using previous functions
 function playGame()
 {   
-    
-
+    playButton.style.display = "none";
+    gamePlayContent.style.display = "flex";
     // write a function for the game logic, that decide who is the round winner and increment the score
     function playRound(humanChoice, computerChoice)
     {
@@ -50,17 +51,17 @@ function playGame()
             {
                 if(computerChoice === "rock")
                 {
-                    resultDiv.textContent = "Rock versus Rock is draw";
+                    resultDiv.textContent = "Rock can't beat a rock, draw";
                 }else if(computerChoice === "paper")
                 {
                     computerScore+=1;
                     
-                    resultDiv.textContent = "Paper beats Rock, computer wins!";
+                    resultDiv.textContent = "Paper somehow beated a rock, computer wins!";
     
                 }else
                 {
                     humanScore+=1;
-                    resultDiv.textContent ="Rock beats Scissor, human wins!";
+                    resultDiv.textContent ="Rock smashed Scissor, human wins!";
                 }
             }else if(humanChoice === "paper")
             {
@@ -68,28 +69,28 @@ function playGame()
                 {
                     humanScore+=1;
             
-                    resultDiv.textContent ="Paper beats Rock, human wins!";
+                    resultDiv.textContent ="Paper somehow beated a rock, human wins!";
                 }else if(computerChoice === "paper")
                 {
-                    resultDiv.textContent="Paper versus Paper, it's a Draw!";
+                    resultDiv.textContent="Paper can't beat it self, it's a Draw!";
                 }else
                 {
                     computerScore+=1;
-                    resultDiv.textContent = "Scissor beats Paper, computer wins!"
+                    resultDiv.textContent = "Scissor cut Paper in half, computer wins!"
                 }
             }else
             {
                 if(computerChoice === "rock")
                 {
                     computerScore+=1;
-                    resultDiv.textContent = "Rock beats Scissor, Computer wins!";
+                    resultDiv.textContent = "Rock smashed Scissor, Computer wins!";
                 }else if(computerChoice === "paper")
                 {
                     humanScore += 1;
-                    resultDiv.textContent = "Scissor beats Paper, human wins!";
+                    resultDiv.textContent = "Scissor cut Paper in half, human wins!";
                 }else
                 {
-                    resultDiv.textContent = "Scissor vs Scissor, It's a Draw!";
+                    resultDiv.textContent = "Scissor is just hugging the other scissor, It's a Draw!";
                 }
             }
             // updating player and computer score
@@ -103,7 +104,7 @@ function playGame()
 
             }else if(computerScore === 5 )
             {
-                resultDiv.textContent = "computer won!"
+                resultDiv.textContent = "computer won! such a loser lol"
             }
             humanScore = 0;
             computerScore = 0;
@@ -114,29 +115,76 @@ function playGame()
     }
 
     //creating variables that contains buttons, for rock paper scissor so the player choose between them
-    const rockButton = document.createElement("button");
-    const scissorButton = document.createElement("button");
-    const paperButton = document.createElement("button");
-    const buttonsContainer = document.querySelector(".buttons-container");
-
-    rockButton.textContent = "rock";
-    scissorButton.textContent = "scissors";
-    paperButton.textContent = "paper";
-
-    buttonsContainer.appendChild(rockButton);
-    buttonsContainer.appendChild(scissorButton);
-    buttonsContainer.appendChild(paperButton);
+    const rock = document.querySelector(".rock");
+    const paper = document.querySelector(".paper");
+    const scissor = document.querySelector(".scissors");
+    const choicesCards = document.querySelector(".choices-cards");
+    const choices = document.querySelector(".choices");
+    const nextRoundButton = document.querySelector(".next-button")
+    const chooseTitle = document.querySelector(".choose-title");
 
     //adding event listeners so it calls playRound function with the appropriate properties
-    rockButton.addEventListener("click", ()=>{
-        playRound("rock",getComputerChoice());
+    rock.addEventListener("click",()=>
+    {
+        nextRoundButton.style.display="block";
+        chooseTitle.style.display="none";
+        choicesCards.style.display = "none";
+        choices.style.display = "flex";
+        choices.querySelector(".player-choice-img").setAttribute("src", "images/rock.png");
+        let computerChoiceNode = choices.querySelector(".computer-choice-img");
+        let computerChoice = getComputerChoice();
+        if(computerChoice === "rock")
+        {
+            computerChoiceNode.setAttribute("src", "images/rock.png");
+        }else if(computerChoice === "paper")
+        {
+            computerChoiceNode.setAttribute("src", "images/paper.png");
+        }else
+        {
+            computerChoiceNode.setAttribute("src", "images/scissor.png");
+        }
+        playRound("rock",computerChoice);
     });
-    scissorButton.addEventListener("click", ()=>{
-        playRound("scissor", getComputerChoice());
-    });
-    paperButton.addEventListener("click", ()=>{
-      playRound("paper", getComputerChoice());  
-    });
+
+    paper.addEventListener("click",()=>
+    {
+        choicesCards.style.display = "none";
+        choices.style.display = "flex";
+        choices.querySelector(".player-choice-img").setAttribute("src", "images/rock.png");
+        let computerChoiceNode = choices.querySelector(".computer-choice-img");
+        let computerChoice = getComputerChoice();
+        if(computerChoice === "rock")
+        {
+            computerChoiceNode.setAttribute("src", "images/rock.png");
+        }else if(computerChoice === "paper")
+        {
+            computerChoiceNode.setAttribute("src", "images/paper.png");
+        }else
+        {
+            computerChoiceNode.setAttribute("src", "images/scissor.png");
+        }
+        playRound("paper",computerChoice);
+    })
+
+    scissor.addEventListener("click",()=>
+    {
+        choicesCards.style.display = "none";
+        choices.style.display = "flex";
+        choices.querySelector(".player-choice-img").setAttribute("src", "images/rock.png");
+        let computerChoiceNode = choices.querySelector(".computer-choice-img");
+        let computerChoice = getComputerChoice();
+        if(computerChoice === "rock")
+        {
+            computerChoiceNode.setAttribute("src", "images/rock.png");
+        }else if(computerChoice === "paper")
+        {
+            computerChoiceNode.setAttribute("src", "images/paper.png");
+        }else
+        {
+            computerChoiceNode.setAttribute("src", "images/scissor.png");
+        }
+        playRound("scissor",computerChoice);
+    })
 
     // initializing computer score and player score to 0
     computerScorePara.textContent = "computer score = 0";

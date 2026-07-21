@@ -45,31 +45,42 @@ main
     justify-content: center;
     background-color: #1E3A5F;
     width: 80%;
-    height: 60%;
+    height: 65%;
     border-radius: 40px;
     
 }
 
-main .play-button
+main .play-button, .next-button
 {
-    display: none;
+    display: block;
     font-size: 80px;
     font-size: 700;
+    height: auto;
+    width: auto;
     padding: 20px 100px;
     background-color:  #60A5FA;
     border-radius: 15px;
     color: #F59E0B;
     letter-spacing: 30px;
 }
+.next-button
+{
+    display: none;
+    width: auto;
+    height: auto;
+    font-size: 30px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+}
 
-main .play-button:hover
+main .play-button:hover, .next-button:hover
 {
     background-color: #F59E0B;
     color: #F9FAFB;
     transition: 0.3s;
 }
 
-main button:active
+main button:active, .next-button:active
 {
     background-color: #9CA3AF;
 }
@@ -94,22 +105,31 @@ footer p
     height: 100% ;
     width: 100%;
     display: flex;
+
     justify-content: center;
     padding: 50px;
 }
 
 .gameplay-content
 {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between !important;
+    margin: 0;
+    
 }
 
 .gameplay-content h1
 {
-    font-size: 48px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.card:hover
+{
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .choices-cards
@@ -157,4 +177,50 @@ footer p
 .score .note
 {
     color: #9CA3AF;
+}
+
+.clicked
+{
+    width: 100px !important;
+    height: auto;
+}
+
+.results
+{
+    text-align: center;
+    color: #22C55E;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.choices
+{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.choices p
+{
+    font-size: 30px;
+}
+
+.player-choice img, .computer-choice img
+{
+    width: 200px;
+    border-radius: 25px 25px 0 0 ;
+    margin: 0;
+    padding: 0;
+}
+
+.player-choice p, .computer-choice p
+{
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+    background: #F9FAFB;
+    width: 200px;
+    border-radius: 0 0 25px 25px;
+    color: #F59E0B;
+    margin: 0;
 }
