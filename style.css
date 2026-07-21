@@ -1,9 +1,18 @@
 *
 {
-    font-family:'Courier New', Courier, monospace;
+    font-family: "Jersey 10 Charted", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #F9FAFB;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /*#FF443C*/
+}
+
+body
+{
+    background-color: #111827;
 }
 
 body
@@ -18,6 +27,7 @@ h1
     text-align: center;
     padding: 30px;
     margin-bottom: 10px;
+    font-size: 60px;
 }
 
 .playButton
