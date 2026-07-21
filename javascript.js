@@ -122,11 +122,11 @@ function playGame()
             
             if(humanScore === 5)
             {
-                playButton.textContent ="Congratulations, You won! \n Click me to Replay"
+                playButton.textContent ="You won! \n Click me to Replay"
 
             }else if(computerScore === 5 )
             {
-                playButton.textContent ="ooooh, What a loser! \n Click me to Replay"
+                playButton.textContent ="You lost\n Click me to Replay"
             }
             humanScore = 0;
             computerScore = 0;
@@ -139,7 +139,7 @@ function playGame()
     const scissor = document.querySelector(".scissors");
     const choicesCards = document.querySelector(".choices-cards");
     const choices = document.querySelector(".choices");
-    
+
     const nextRoundButton = document.querySelector(".next-button")
     const chooseTitle = document.querySelector(".choose-title");
 
