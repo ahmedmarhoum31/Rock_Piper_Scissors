@@ -47,6 +47,7 @@ main
     width: 80vw;
     height: 70vh;
     border-radius: 4rem;
+    border: 2px dotted #F9FAFB;
     
 }
 
