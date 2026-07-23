@@ -172,7 +172,7 @@ function playGame()
         chooseTitle.style.display="none";
         choicesCards.style.display = "none";
         choices.style.display = "flex";
-        choices.querySelector(".player-choice-img").setAttribute("src", "images/rock.png");
+        choices.querySelector(".player-choice-img").setAttribute("src", "images/paper.png");
         let computerChoiceNode = choices.querySelector(".computer-choice-img");
         let computerChoice = getComputerChoice();
         if(computerChoice === "rock")
@@ -205,7 +205,7 @@ function playGame()
             computerChoiceNode.setAttribute("src", "images/paper.png");
         }else
         {
-            computerChoiceNode.setAttribute("src", "images/rock.png");
+            computerChoiceNode.setAttribute("src", "images/scissor.png");
         }
         playRound("scissor",computerChoice);
     })
